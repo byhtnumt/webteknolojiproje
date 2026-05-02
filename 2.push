@@ -1,0 +1,54 @@
+function stripTags(value) {
+    const temp = document.createElement("div");
+    temp.innerHTML = value || "";
+    return (temp.textContent || temp.innerText || "").trim();
+}
+
+function collectContactData(form) {
+    return {
+        ad: form.ad.value.trim(),
+        soyad: form.soyad.value.trim(),
+        email: form.email.value.trim(),
+        telefon: form.telefon.value.trim(),
+        dogum_tarihi: form.dogum_tarihi.value.trim(),
+        konu: form.konu.value.trim(),
+        sehir: form.sehir.value.trim(),
+        mesaj: form.mesaj.value.trim(),
+        departman: form.querySelector("input[name='departman']:checked")?.value || "",
+        ilgi_alanlari: Array.from(form.querySelectorAll("input[name='ilgi_alanlari[]']:checked")).map((item) => item.value),
+        kvkk: form.kvkk.checked
+    };
+}
+
+function validateContactData(data) {
+    const errors = [];
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^[0-9]{10,11}$/;
+
+    if (!data.ad) errors.push("Ad alani bos birakilamaz.");
+    if (!data.soyad) errors.push("Soyad alani bos birakilamaz.");
+    if (!data.email || !emailPattern.test(data.email)) errors.push("Gecerli bir e-posta adresi giriniz.");
+    if (!data.telefon || !phonePattern.test(data.telefon)) errors.push("Telefon numarasi sadece 10 ya da 11 rakam icermelidir.");
+    if (!data.dogum_tarihi) errors.push("Dogum tarihi seciniz.");
+    if (!data.konu) errors.push("Bir konu seciniz.");
+    if (!data.sehir) errors.push("Sehir seciniz.");
+    if (!data.departman) errors.push("Bir departman tercihi yapiniz.");
+    if (data.ilgi_alanlari.length === 0) errors.push("En az bir ilgi alani seciniz.");
+    if (!data.mesaj || data.mesaj.length < 20) errors.push("Mesaj alani en az 20 karakter olmali.");
+    if (!data.kvkk) errors.push("Acik riza kutusunu isaretlemeniz gerekiyor.");
+
+    return errors;
+}
+
+function renderFeedback(target, errors, successMessage) {
+    if (!target) return;
+
+    if (errors.length) {
+        target.className = "feedback-box error";
+        target.innerHTML = `<strong>Dogrulama basarisiz.</strong><ul>${errors.map((error) => `<li>${error}</li>`).join("")}</ul>`;
+        return;
+    }
+
+    target.className = "feedback-box success";
+    target.innerHTML = `<strong>${successMessage}</strong>`;
+}
