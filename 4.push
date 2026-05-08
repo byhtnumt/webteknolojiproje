@@ -1,0 +1,43 @@
+
+function initApiPage() {
+    const container = document.getElementById("apiResults");
+    const input = document.getElementById("apiQuery");
+    const button = document.getElementById("apiQueryBtn");
+    const info = document.getElementById("apiInfo");
+
+    if (!container || !input || !button || !info) return;
+
+    async function loadShows(query) {
+        container.innerHTML = "<p>Veriler yukleniyor...</p>";
+        info.textContent = `"${query}" anahtar kelimesi icin TVMaze API sonucu listeleniyor.`;
+
+        try {
+            const response = await fetch(`https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`);
+            if (!response.ok) {
+                throw new Error("API yaniti alinamadi.");
+            }
+
+            const results = await response.json();
+            if (!Array.isArray(results) || results.length === 0) {
+                container.innerHTML = "<div class='alert-inline'>Sonuc bulunamadi. Farkli bir kelime deneyebilirsin.</div>";
+                return;
+            }
+
+            container.innerHTML = results.slice(0, 6).map(buildShowCard).join("");
+        } catch (error) {
+            container.innerHTML = `<div class="alert-inline">${error.message}</div>`;
+        }
+    }
+
+    button.addEventListener("click", () => {
+        const query = input.value.trim() || "science";
+        loadShows(query);
+    });
+
+    loadShows(input.value.trim() || "science");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initApiPage();
+    initContactForm();
+});
