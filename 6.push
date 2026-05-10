@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şehrim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="wtproje.css">
+</head>
+<body class="home-page">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg topbar home-topbar">
+                    <a class="navbar-brand home-brand d-lg-none" href="index.html">Umut</a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigasyonu ac">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                        <ul class="navbar-nav home-nav align-items-lg-center">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="sehrim.html">Sehrim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasimiz</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">Ilgi Alanlarim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="iletisim.html">Iletisim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Giris</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div class="container">
+                   
+                    <h1>Dünyanın en güzel şehri İstanbul</h1>
+                    <p>
+                       İstanbul bazen bir vapur sesiyle, bazen de kalabalık sokaklarında yürürken insana kendini farklı hissettirir. Gün batımında Boğaz’a karşı oturmak, martı seslerini dinlemek ve şehrin ışıklarını izlemek unutulmaz anılar bırakır. Her semtinde ayrı bir hikâye, her köşesinde başka bir his vardır. İstanbul, insanın içinde hem huzur hem de özlem bırakan nadir şehirlerden biridir.
+                    </p>
+                  
+                </div>
+            </section>
+
+            <section class="pb-5">
+                <div class="container">
+                    <div class="carousel-shell city-carousel-shell">
+                        <div id="cityCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Bogaz Koprusu"></button>
+                                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="1" aria-label="Vapur"></button>
+                                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="2" aria-label="Galata"></button>
+                                <button type="button" data-bs-target="#cityCarousel" data-bs-slide-to="3" aria-label="Tarihi siluet"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="#bogaz-koprusu">
+                                        <img src="assets/istanbul-bogaz-koprusu.jpeg" class="d-block w-100" alt="Bogaz Koprusu gun batiminda">
+                                    </a>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Bogaz Koprusu</h5>
+                                        <p>Gun batiminda bogazin uzerine dusen turuncu isik Istanbul'un en guclu karelerinden birini olusturuyor.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="#vapur">
+                                        <img src="assets/istanbul-vapur.jpeg" class="d-block w-100" alt="Gun batiminda vapur">
+                                    </a>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Vapur Yolculugu</h5>
+                                        <p>Istanbul'un denizle kurdugu bag en guzel vapur yolculuklarinda hissediliyor.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="#galata">
+                                        <img src="assets/istanbul-galata.jpeg" class="d-block w-100" alt="Galata Kulesi ve gun batimi">
+                                    </a>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Galata Gun Batimi</h5>
+                                        <p>Kalabalik, isik ve Galata silueti bir araya geldiginde sehrin enerjisi tek karede toplaniyor.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="#tarihi-siluet">
+                                        <img src="assets/istanbul-siluet.jpeg" class="d-block w-100" alt="Istanbul tarihi silueti">
+                                    </a>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Tarihi Siluet</h5>
+                                        <p>Camilerin ve denizin bir araya geldigi bu goruntu Istanbul'un klasik aksam manzarasini yansitiyor.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#cityCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Onceki</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#cityCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Sonraki</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5 city-facts-section">
+                <div class="container">
+                    <div class="section-title city-facts-title">
+                        <blockquote class="city-facts-quote">
+                            <p>
+                                Sana dun bir tepeden baktim aziz Istanbul!<br>
+                                Gormedim gezmedigim, sevmedigim hicbir yer.<br>
+                                Omrum oldukca, gonul tahtina keyfince kurul!<br>
+                                Sade bir semtini sevmek bile bir omre deger.
+                            </p>
+                            <cite>Yahya Kemal Beyatli</cite>
+                        </blockquote>
+                    </div>
+
+                    <div class="city-facts-shell">
+                        <div class="row g-4 city-facts-grid">
+                            <div class="col-md-6 col-xl-3">
+                                <article class="fact-card city-fact-card">
+                                    <div class="city-fact-icon" aria-hidden="true">
+                                        <i class="bi bi-people-fill"></i>
+                                    </div>
+                                    <span>Nufus</span>
+                                    <strong>15.8M</strong>
+                                    <p>Yaklasik 15.8 milyonluk nufusuyla Istanbul, tek basina dev bir sehrin ritmini tasiyor.</p>
+                                </article>
+                            </div>
+
+                            <div class="col-md-6 col-xl-3">
+                                <article class="fact-card city-fact-card">
+                                    <div class="city-fact-icon" aria-hidden="true">
+                                        <i class="bi bi-bounding-box"></i>
+                                    </div>
+                                    <span>Yuz Olcumu</span>
+                                    <strong>5,461 km2</strong>
+                                    <p>5,461 kilometrekarelik alaniyla Istanbul, denizle ve kara dokusuyla cok katmanli bir yapi kuruyor.</p>
+                                </article>
+                            </div>
+
+                            <div class="col-md-6 col-xl-3">
+                                <article class="fact-card city-fact-card">
+                                    <div class="city-fact-icon" aria-hidden="true">
+                                        <i class="bi bi-grid-3x3-gap-fill"></i>
+                                    </div>
+                                    <span>Ilce</span>
+                                    <strong>39</strong>
+                                    <p>Toplam 39 ilceden olusan Istanbul, her bolgesinde farkli bir karakter ve yasam duygusu tasiyor.</p>
+                                </article>
+                            </div>
+
+                            <div class="col-md-6 col-xl-3">
+                                <article class="fact-card city-fact-card">
+                                    <div class="city-fact-icon" aria-hidden="true">
+                                        <i class="bi bi-sign-turn-right-fill"></i>
+                                    </div>
+                                    <span>Kopru</span>
+                                    <strong>3</strong>
+                                    <p>Avrupa ve Asya'yi birbirine baglayan 3 ana kopru, sehrin hem simgesi hem de damarlarindan biri gibi calisiyor.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5">
+                <div class="container">
+                    <div class="row g-4 city-places-grid">
+                        <div class="col-md-6 col-xl-3" id="bogaz-koprusu">
+                            <article class="place-card">
+                                <img src="assets/istanbul-bogaz-koprusu.jpeg" alt="Bogaz Koprusu">
+                                <h3>Bogaz Koprusu</h3>
+                                <p>
+                                    Gun batiminda koprunun isiklarla birlikte gorunmesi Istanbul'un modern ve romantik tarafini ayni anda hissettiriyor.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="vapur">
+                            <article class="place-card">
+                                <img src="assets/istanbul-vapur.jpeg" alt="Vapur">
+                                <h3>Vapur</h3>
+                                <p>
+                                    Vapur manzarasi Istanbul'da denizin gundelik hayatin ne kadar merkezinde oldugunu gosteren en guzel karelerden biri.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="galata">
+                            <article class="place-card">
+                                <img src="assets/istanbul-galata.jpeg" alt="Galata Kulesi">
+                                <h3>Galata</h3>
+                                <p>
+                                    Galata Kulesi etrafindaki hareketlilik ve gunese karsi dusen siluetler sehrin enerjisini guclu sekilde yansitiyor.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="tarihi-siluet">
+                            <article class="place-card">
+                                <img src="assets/istanbul-siluet.jpeg" alt="Istanbul tarihi silueti">
+                                <h3>Tarihi Siluet</h3>
+                                <p>
+                                    Camilerin denizle bulustugu bu manzara Istanbul'un tarih, mimari ve aksam isigiyle kurdugu ozel havayi tasiyor.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="sahil-sokagi">
+                            <article class="place-card">
+                                <img src="assets/istanbul-sahil-sokagi.jpeg" alt="Denize acilan Istanbul sokagi">
+                                <h3>Sahil Sokagi</h3>
+                                <p>
+                                    Agaclarin arasindan denize acilan bu dar sokak, Istanbul'un gundelik hayatiyla bogaz manzarasini ayni karede bulusturuyor.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="ortakoy-camii">
+                            <article class="place-card">
+                                <img src="assets/istanbul-ortakoy-camii.jpeg" alt="Ortakoy Camii">
+                                <h3>Ortakoy Camii</h3>
+                                <p>
+                                    Ortakoy Camii ve kopruyu ayni anda gosteren bu kare, Istanbul'un tarihi ve modern yuzunu dengeli bicimde yansitiyor.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="sehir-sokagi">
+                            <article class="place-card">
+                                <img src="assets/istanbul-sehir-sokagi.jpeg" alt="Istanbul sokagi ve uzakta cami">
+                                <h3>Sehir Sokagi</h3>
+                                <p>
+                                    Sokak dokusunun arasindan gorunen siluet, sehrin kalabaligi icinde bile Istanbul'a ozgu derinligi hissettiriyor.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-xl-3" id="bogaz-kadraj">
+                            <article class="place-card">
+                                <img src="assets/istanbul-bogaz-kadraj.jpeg" alt="Bogazdan kadraj">
+                                <h3>Bogaz Kadraji</h3>
+                                <p>
+                                    Vapurdan cekilmis bu manzara, bogazin hareketini ve karsi kiyidaki yapilarin sakin gorunumunu guclu bir cerceveyle veriyor.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer home-footer">
+            <div class="container">
+                <div class="footer-box contact-strip">
+                    <span class="contact-strip-label">Iletisim</span>
+                    <a href="https://www.instagram.com/byhtn.umt/" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@byhtn.umt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-tiktok" aria-hidden="true"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://github.com/byhtnumt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="wtproje.js"></script>
+</body>
+</html>
