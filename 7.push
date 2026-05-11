@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WT Proje Taslagi | Ilgi Alanlarim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="wtproje.css">
+</head>
+<body class="home-page music-page">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg topbar home-topbar">
+                    <a class="navbar-brand home-brand d-lg-none" href="index.html">Umut</a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigasyonu ac">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                        <ul class="navbar-nav home-nav align-items-lg-center">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Hakkimda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                            <li class="nav-item"><a class="nav-link" href="sehrim.html">Sehrim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasimiz</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="ilgialanlarim.html">Ilgi Alanlarim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="iletisim.html">Iletisim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Giris</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="pb-4">
+                <div class="container">
+                    <div class="interest-stack">
+                        <article class="interest-showcase music-block">
+                            <div class="interest-header">
+                                <div>
+                                    
+                                    <h1>Müzik Dinlemek</h1>
+                                    <p>Hayatta en sevdiğim şeylerden biri müzik dinlemek.Yeni şarkılar ve sanatçılar keşfetmeyi çok
+                                        seviyorum.Hayatımda olmazsa olmazlardan biri müzik dinlemek.Burada gördüğünüz
+                                        8 sanatçı benim güncel olarak dinlemeyi en çok sevdiğim sanatçılar.
+                                    </p>
+                                </div>
+                                
+                            
+                            </div>
+                            <div class="interest-card-row">
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-1.png" alt="Favori sarkici fotografi 1">
+                                    <p>Nilüfer</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-2.png" alt="Favori sarkici fotografi 2">
+                                    <p>İlhan İrem</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-3.png" alt="Nilufer album kapagi">
+                                    <p>Sezen Aksu</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-4.png" alt="Tarkan album kapagi">
+                                    <p>Şebnem Ferah</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-5.png" alt="Ilhan Irem album kapagi">
+                                    <p>Barış Manço</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-6.png" alt="Baris Manco album kapagi">
+                                    <p>Ferdi Özbeğen</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-7.png" alt="Ferdi Ozbegen album kapagi">
+                                    <p>Cem Karaca</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/sarkici-8.png" alt="Favori sarkici fotografi 8">
+                                    <p>Tarkan</p>
+                                </article>
+                            </div>
+                        </article>
+
+                        <article class="interest-showcase song-block">
+                            <div class="interest-header">
+                                <div>
+                                    
+                                    <h1>En sevdiğim şarkılar</h1>
+                                    <p>Dinlediğim her şarkıyı birbirinden çok seviyorum ama şuan altta gördüğünüz 8 şarkı
+                                        benim güncel olarak en sevdiğim 8 şarkı.
+                                    </p>
+                                </div>
+                             
+                            </div>
+                            <div class="interest-card-row">
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-1.jpeg" alt="Sevilen sarkilar icin fotograf 1">
+                                    <p>Kenan Doğulu-Ara Beni Lütfen</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-2.jpeg" alt="Sevilen sarkilar icin fotograf 2">
+                                    <p>Anathema-Anathema</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-3.jpeg" alt="Sevilen sarkilar icin fotograf 3">
+                                    <p>Rafet El Roman-Yalancı Şahidim</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-4.jpeg" alt="Sevilen sarkilar icin fotograf 4">
+                                    <p>Sezen Aksu-Her Şeyi Yak</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-5.jpeg" alt="Sevilen sarkilar icin fotograf 5">
+                                    <p>Nilüfer-Kar Taneleri</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-6.jpeg" alt="Sevilen sarkilar icin fotograf 6">
+                                    <p>Tarkan-Kış Güneşi</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-7.jpeg" alt="Sevilen sarkilar icin fotograf 7">
+                                    <p>Serab Erener-Yanarım</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fav-8.jpeg" alt="Sevilen sarkilar icin fotograf 8">
+                                    <p>Şebnem Ferah-Sil Baştan</p>
+                                </article>
+                            </div>
+                        </article>
+
+                        <article class="interest-showcase sport-block">
+                            <div class="interest-header">
+                                <div>
+                                    
+                                    <h1>Futbol Oynamak</h1>
+                                    <p>Küçük yaşlarımdan beridir futbolla aram iyidir.Hayatımın her döneminde futbol oldu.Futbol oynamayı sevdiğim kadar
+                                        izlemeyi de çok seviyorum.Benim hayatımda olmazsa olmazlardan biri de futbol.
+                                    </p>
+                                </div>
+                 
+                            </div>
+                            <div class="interest-card-row">
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-1.jpeg" alt="Futbol fotografi 1">
+                                    <p>Messi-Suarez-Neymar</p>
+                                    <p>Efsane 3'lü</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-2.jpeg" alt="Futbol fotografi 2">
+                                    <p>2017 Real Madrid Kadrosu</p>
+                                    <p>Los Galacticos</p>
+
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-3.jpeg" alt="Futbol fotografi 3">
+                                    <p>2017 Beşiktaş Kadrosu</p>
+                                    <p>Beni yüreğine yüreğine yaz</p>
+
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-4.jpeg" alt="Futbol fotografi 4">
+                                    <p>Prime Neymar...</p>
+                                    
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-5.jpeg" alt="Futbol fotografi 5">
+                                    <p>Mario Gomez</p>
+                                    <p>33 Numaraaa</p>
+
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-6.jpeg" alt="Futbol fotografi 6">
+                                    <p>Ricardo Quaresma</p>
+                                    <p>Çingenem</p>
+
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-7.jpeg" alt="Futbol fotografi 7">
+                                    <p>Lionel Messi</p>
+                                    <p>GOAT</p>
+
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/fut-8.jpeg" alt="Futbol fotografi 8">
+                                    <p>2015 Şampiyonluğu</p>
+                                    <p>Good old days</p>
+                                </article>
+                            </div>
+                        </article>
+
+                        <article class="interest-showcase screen-block">
+                            <div class="interest-header">
+                                <div>
+                                    
+                                    <h1>Dizi/Film İzlemek</h1>
+                                    <p>Boş vakitlerimi dizi/film izleyerek geçirmeyi severim.
+                                        Dizideki karakterlerle duygusal bağlar kurarım.Favori dizi karakterlerim Berlin ve T-Bag.
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <div class="interest-card-row">
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-1.jpeg" alt="Dizi ve film fotografi 1">
+                                    <p>La Casa De Papel</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-2.jpeg" alt="Dizi ve film fotografi 2">
+                                    <p>The Walking Dead</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-3.jpeg" alt="Dizi ve film fotografi 3">
+                                    <p>Game Of Thrones</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-4.jpeg" alt="Dizi ve film fotografi 4">
+                                    <p>Prison Break</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-5.jpeg" alt="Dizi ve film fotografi 5">
+                                    <p>Hızlı Ve Öfkeli Serisi</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-6.jpeg" alt="Dizi ve film fotografi 6">
+                                    <p>Peaky Blinders</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-7.jpeg" alt="Dizi ve film fotografi 7">
+                                    <p>Bridge Of Terabithia</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/film-8.jpeg" alt="Dizi ve film fotografi 8">
+                                    <p>Öyle Bir Geçer Zamanki</p>
+                                </article>
+                            </div>
+                        </article>
+
+                        <article class="interest-showcase game-block">
+                            <div class="interest-header">
+                                <div>
+                                    
+                                    <h1>Oyun Oynamak</h1>
+                                    <p>Çok sık olmasa da bazı oyunları tekrar tekrar oynamayı seviyorum.Küçüklüğümden beri 
+                                    belli başlı oyunları defalarca oynadım ve hala hayatımdalar.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="interest-card-row">
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-1.jpeg" alt="Oyun fotografi 1">
+                                    <p>The Last Of Us</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-2.jpeg" alt="Oyun fotografi 2">
+                                    <p>Goose Goose Duck</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-3.jpeg" alt="Oyun fotografi 3">
+                                    <p>Tomb Raider</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-4.jpeg" alt="Oyun fotografi 4">
+                                    <p>Minecraft</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-5.jpeg" alt="Oyun fotografi 5">
+                                    <p>Watch Dogs 2</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-6.jpeg" alt="Oyun fotografi 6">
+                                    <p>Red Dead Redemption 2</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-7.jpeg" alt="Oyun fotografi 7">
+                                    <p>Need For Speed Unbound</p>
+                                </article>
+                                <article class="interest-photo-card">
+                                    <img src="assets/game-8.jpeg" alt="Oyun fotografi 8">
+                                    <p>Goley</p>
+                                </article>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5">
+                <div class="container">
+                    <div class="result-panel music-search-panel compact-panel">
+                        <div class="section-title">
+                         
+                            <h2>Siteyi Gezerken Şarkı Aratıp Arka Planda Dinleyebilirsiniz.</h2>
+                            <p id="musicInfo">Varsayilan anahtar kelime ile acilan, daha kompakt bir muzik kesif kutusu.</p>
+                        </div>
+                        <div class="search-bar">
+                            <input type="text" id="musicQuery" class="form-control" value="the weeknd" placeholder="Ornek: daft punk, indie pop, house">
+                            <button id="musicQueryBtn" class="custom-btn primary" type="button">Parcalari Getir</button>
+                        </div>
+                        <div class="genre-pill-row mt-3">
+                            
+                        </div>
+                        <div id="musicResults" class="result-grid mt-4"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer home-footer">
+            <div class="container">
+                <div class="footer-box contact-strip">
+                    <span class="contact-strip-label">Iletisim</span>
+                    <a href="https://www.instagram.com/byhtn.umt/" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@byhtn.umt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-tiktok" aria-hidden="true"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://github.com/byhtnumt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="wtproje.js"></script>
+</body>
+</html>
