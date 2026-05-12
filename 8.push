@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umut | Ozgecmis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="wtproje.css">
+</head>
+<body class="home-page cv-page">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg topbar home-topbar">
+                    <a class="navbar-brand home-brand d-lg-none" href="index.html">Umut</a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigasyonu ac">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                        <ul class="navbar-nav home-nav align-items-lg-center">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Hakkimda</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="cv.html">CV</a></li>
+                            <li class="nav-item"><a class="nav-link" href="sehrim.html">Sehrim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasimiz</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">Ilgi Alanlarim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="iletisim.html">Iletisim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Giris</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner" aria-labelledby="cvHeroTitle">
+                <div class="container">
+                    <div class="cv-hero-grid">
+                        <header class="hero-panel cv-hero-panel">
+                            <h1 id="cvHeroTitle">Eğitim Hayatım Ve Kariyer Hedeflerim</h1>
+                            <p>
+                                Bu sayfa benim 2011 yılında başlayan ve hala devam eden eğitim hayatımı ve gelecekteki planlarımı
+                                anlatıyor.
+                            </p>
+                        </header>
+
+                        <aside class="cv-hero-rail" aria-label="CV ozet kartlari">
+                            <article class="cv-hero-card accent">
+                                <span class="cv-card-kicker">Su an</span>
+                                <h2>2. sinif Bilgisayar Muhendisligi ogrencisi</h2>
+                                <p>Derslerime ve hayatımı dengeli bir şekilde sürdürüyorum.</p>
+                            </article>
+                            <article class="cv-hero-card">
+                                <span class="cv-card-kicker">Hedef</span>
+                                <p>Üniversitemi başarılı bir şekilde tamamlayıp bilgili bir mühendis olarak hayata atılmak</p>
+                            </article>
+                            <article class="cv-hero-card">
+                                <span class="cv-card-kicker">Bildiğim Diller</span>
+                                <p>C++,C#,Assembly,PostgreSQL,JavaScript</p>
+                            </article>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5">
+                <div class="container">
+                    <div class="cv-layout">
+                        <div class="cv-content">
+                            <section class="section-shell cv-education-shell" aria-labelledby="educationJourneyTitle">
+                                <header class="section-title">
+                                    <h2 id="educationJourneyTitle">Egitim Yolculugu</h2>
+                                
+                                </header>
+                                <div class="cv-timeline">
+                                    <article class="cv-education-card">
+                                        <header>
+                                            <div>
+                                                <span class="cv-year-badge">2011 - 2015</span>
+                                                <h3>Sehitler Ilkokulu</h3>
+                                            </div>
+                                          
+                                        </header>
+                                       
+                                        <ul class="cv-point-list">
+                                            <li>Küçük yaşta olmama rağmen sorumluluk kazanmaya başladım</li>
+                                            <li>Okuma,yazma gibi temel becerileri edindim</li>
+                                        </ul>
+                                    </article>
+
+                                    <article class="cv-education-card">
+                                        <header>
+                                            <div>
+                                                <span class="cv-year-badge">2015 - 2019</span>
+                                                <h3>Omer Dincer Ortaokulu</h3>
+                                            </div>
+                                          
+                                        </header>
+                                    
+                                        <ul class="cv-point-list">
+                                            <li>Sorumluluk bilincimin genel olarak oturduğu bir bölüm oldu.</li>
+                                            <li>Biraz daha hayata dair fikirler edinmeye başladım.</li>
+                                            <li>Aynı zamanda hedeflerimi belirledim.</li>
+
+                                        </ul>
+                                    </article>
+
+                                    <article class="cv-education-card">
+                                        <header>
+                                            <div>
+                                                <span class="cv-year-badge">2019 - 2023</span>
+                                                <h3>Gencosman Anadolu Lisesi</h3>
+                                            </div>
+                                           
+                                        </header>
+                                        <ul class="cv-point-list">
+                                            <li>Hedeflerimi çok net belirlediğim bir dönem.</li>
+                                            <li>İstediğim bölümü kazanmak için çabaladığım seneler.</li>
+                                            <li>Çevremin genişlediği sosyal çevremi netleştirdiğim zamanlar.</li>
+
+                                        </ul>
+                                    </article>
+
+                                    <article class="cv-education-card">
+                                        <header>
+                                            <div>
+                                                <span class="cv-year-badge">2023 - Devam Ediyor</span>
+                                                <h3>Sakarya Universitesi - Bilgisayar Muhendisligi</h3>
+                                            </div>
+                                           
+                                        </header>
+                                       
+                                        <ul class="cv-point-list">
+                                            <li>İstediğim yerde olduğum dönem.</li>
+                                            <li>Meslek hayatıma hazırlandığım yeni bilgiler,yetkinlikler edindiğim vakitler.</li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <section class="section-shell" aria-labelledby="focusTitle">
+                                <header class="section-title">
+                                    <h2 id="focusTitle">Kullanmayı En Sevdiğim Diller</h2>
+                                 
+                                </header>
+                                <div class="cv-focus-grid">
+                                    <article class="cv-focus-card">
+                                        <h3>PostgreSQL</h3>
+                                        <p>Veritabanı oluşturup yönetme ve bu sistemi tasarlamaktan keyif alıyorum.</p>
+                                    </article>
+
+                                    <article class="cv-focus-card">
+                                        <h3>C++</h3>
+                                        <p>C++ ile kodlama yapmak keyif verici.Birçok projede işimi görmesi onu sevmem için yeterli bir neden.</p>
+                                       
+                                    </article>
+
+                                    <article class="cv-focus-card">
+                                        <h3>C#</h3>
+                                        <p>Nesneye yönelik programlamanın olmazsa olmazı.Form ve konsol uygulaması yapıp bunları birbiriyle kullanmak
+                                            ve bunlarla alakalı bir şeyler geliştirmek zevkli.
+                                        </p>
+                                       
+                                    </article>
+                                </div>
+                            </section>
+
+                            <section class="section-shell cv-goal-panel" aria-labelledby="goalTitle">
+                                <article class="cv-goal-article">
+                                    <header class="section-title">
+                                        <h1 id="goalTitle">Kariyer Hedefi</h>
+                                       
+                                    </header>
+                                    <blockquote class="cv-goal-quote">
+                                      Mezun olana kadar güçlü bir cv hazırlayıp iş hayatıma atıldığımda meslektaşlarımdan daha ön planda biri olmak en önemli hedeflerimden birisi.
+                                    </blockquote>
+                                </article>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer home-footer">
+            <div class="container">
+                <div class="footer-box contact-strip">
+                    <span class="contact-strip-label">Iletisim</span>
+                    <a href="https://www.instagram.com/byhtn.umt/" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@byhtn.umt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-tiktok" aria-hidden="true"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://github.com/byhtnumt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="wtproje.js"></script>
+</body>
+</html>
