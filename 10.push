@@ -1,0 +1,325 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: iletisim.html");
+    exit;
+}
+
+function h($value)
+{
+    return htmlspecialchars((string) $value, ENT_QUOTES, "UTF-8");
+}
+
+function normalizeTextValue($value)
+{
+    $value = strip_tags((string) $value);
+    $value = preg_replace('/\s+/u', ' ', $value);
+    return trim((string) $value);
+}
+
+function normalizeEmailValue($value)
+{
+    $value = strip_tags((string) $value);
+    $value = preg_replace('/\s+/', '', $value);
+    return strtolower(trim((string) $value));
+}
+
+function normalizePhoneValue($value)
+{
+    $digits = preg_replace('/\D+/', '', strip_tags((string) $value));
+    return substr((string) $digits, 0, 11);
+}
+
+function stringLength($value)
+{
+    return function_exists("mb_strlen") ? mb_strlen((string) $value, "UTF-8") : strlen((string) $value);
+}
+
+function displayValue($value, $fallback = "Girilmedi")
+{
+    $trimmedValue = trim((string) $value);
+    return $trimmedValue !== "" ? $trimmedValue : $fallback;
+}
+
+function formatDateValue($value)
+{
+    $trimmedValue = trim((string) $value);
+
+    if ($trimmedValue === "") {
+        return "Secilmedi";
+    }
+
+    $timestamp = strtotime($trimmedValue);
+    return $timestamp ? date("d.m.Y", $timestamp) : $trimmedValue;
+}
+
+function parseSubmittedDate($value)
+{
+    $trimmedValue = trim((string) $value);
+
+    if ($trimmedValue === "") {
+        return null;
+    }
+
+    $date = DateTimeImmutable::createFromFormat("Y-m-d", $trimmedValue);
+    if (!$date || $date->format("Y-m-d") !== $trimmedValue) {
+        return null;
+    }
+
+    return $date;
+}
+
+$allowedTopics = [
+    "Sitede hatali bilgi var",
+    "Sitede telif kurallarina uymayan gorsel var",
+    "Diger",
+];
+$allowedEducation = [
+    "Ilkokul",
+    "Ortaokul",
+    "Lise",
+    "Universite",
+];
+$allowedJobs = [
+    "Muzisyenlik",
+    "Fotografcilik",
+    "Diger",
+];
+$allowedEducationOptions = [
+    "Ilkokul",
+    "Ortaokul",
+    "Lise",
+    "Universite",
+];
+$namePattern = "/^[\\p{L}\\s'-]{2,50}$/u";
+$emailPattern = '/^[^\s@]+@(?:gmail\.com|(?:[a-z0-9-]+\.)*edu\.tr)$/i';
+$phonePattern = '/^[0-9]{10,11}$/';
+
+$ad = normalizeTextValue($_POST["ad"] ?? "");
+$soyad = normalizeTextValue($_POST["soyad"] ?? "");
+$email = normalizeEmailValue($_POST["email"] ?? "");
+$telefon = normalizePhoneValue($_POST["telefon"] ?? "");
+$dogumTarihi = trim($_POST["dogum_tarihi"] ?? "");
+$konu = normalizeTextValue($_POST["konu"] ?? "");
+$egitim = normalizeTextValue($_POST["egitim"] ?? "");
+$mesaj = trim(strip_tags((string) ($_POST["mesaj"] ?? "")));
+$meslek = normalizeTextValue($_POST["meslek"] ?? "");
+$validationSource = normalizeTextValue($_POST["validation_source"] ?? "Belirtilmedi");
+$egitimSecenekleri = $_POST["egitim_secenekleri"] ?? [];
+$kvkk = isset($_POST["kvkk"]) ? "Onaylandi" : "Onaylanmadi";
+
+if (!is_array($egitimSecenekleri)) {
+    $egitimSecenekleri = [$egitimSecenekleri];
+}
+
+$egitimSecenekleri = array_values(array_filter(array_map("trim", $egitimSecenekleri), function ($value) {
+    return $value !== "";
+}));
+$egitimSecenekleri = array_values(array_unique($egitimSecenekleri));
+
+$validationErrors = [];
+$dogumTarihiDate = parseSubmittedDate($dogumTarihi);
+$today = new DateTimeImmutable("today");
+
+if ($ad === "") {
+    $validationErrors[] = "Ad alani bos birakilamaz.";
+} elseif (!preg_match($namePattern, $ad)) {
+    $validationErrors[] = "Ad alani sadece harf, bosluk, kesme isareti ve tire icerebilir.";
+}
+
+if ($soyad === "") {
+    $validationErrors[] = "Soyad alani bos birakilamaz.";
+} elseif (!preg_match($namePattern, $soyad)) {
+    $validationErrors[] = "Soyad alani sadece harf, bosluk, kesme isareti ve tire icerebilir.";
+}
+
+if ($email === "" || !preg_match($emailPattern, $email)) {
+    $validationErrors[] = "E-posta alani sadece gmail.com veya edu.tr uzantili adres kabul eder.";
+}
+
+if ($telefon === "" || !preg_match($phonePattern, $telefon)) {
+    $validationErrors[] = "Telefon numarasi sadece rakamlardan olusmali ve 10 ya da 11 hane olmali.";
+}
+
+if ($dogumTarihi === "") {
+    $validationErrors[] = "Dogum tarihi seciniz.";
+} elseif (!$dogumTarihiDate) {
+    $validationErrors[] = "Gecerli bir dogum tarihi seciniz.";
+} elseif ($dogumTarihiDate > $today) {
+    $validationErrors[] = "Dogum tarihi bugunden ileri bir tarih olamaz.";
+}
+
+if ($konu === "" || !in_array($konu, $allowedTopics, true)) {
+    $validationErrors[] = "Listeden gecerli bir konu seciniz.";
+}
+
+if ($egitim === "" || !in_array($egitim, $allowedEducation, true)) {
+    $validationErrors[] = "Listeden gecerli bir egitim seviyesi seciniz.";
+}
+
+if ($meslek === "" || !in_array($meslek, $allowedJobs, true)) {
+    $validationErrors[] = "Gecerli bir meslek tercihi yapiniz.";
+}
+
+if (count($egitimSecenekleri) === 0) {
+    $validationErrors[] = "En az bir egitim secenegi seciniz.";
+} elseif (count(array_diff($egitimSecenekleri, $allowedEducationOptions)) > 0) {
+    $validationErrors[] = "Egitim seceneklerinde gecersiz bir tercih var.";
+}
+
+if ($mesaj === "" || stringLength($mesaj) < 20) {
+    $validationErrors[] = "Mesaj alani en az 20 karakter olmali.";
+} elseif (stringLength($mesaj) > 1000) {
+    $validationErrors[] = "Mesaj alani en fazla 1000 karakter olabilir.";
+}
+
+if (!isset($_POST["kvkk"])) {
+    $validationErrors[] = "Acik riza kutusunu isaretlemeniz gerekiyor.";
+}
+
+$hasErrors = count($validationErrors) > 0;
+
+if ($hasErrors) {
+    http_response_code(422);
+}
+
+$tumAlanlar = [
+    ["label" => "Ad", "value" => displayValue($ad)],
+    ["label" => "Soyad", "value" => displayValue($soyad)],
+    ["label" => "E-posta", "value" => displayValue($email)],
+    ["label" => "Telefon", "value" => displayValue($telefon)],
+    ["label" => "Dogum Tarihi", "value" => formatDateValue($dogumTarihi)],
+    ["label" => "Konu", "value" => displayValue($konu, "Secilmedi")],
+    ["label" => "Egitim", "value" => displayValue($egitim, "Secilmedi")],
+    ["label" => "Meslek", "value" => displayValue($meslek, "Secilmedi")],
+    ["label" => "Egitim Secenekleri", "value" => count($egitimSecenekleri) > 0 ? implode(", ", $egitimSecenekleri) : "Secim yapilmamis"],
+    ["label" => "Mesaj", "value" => displayValue($mesaj)],
+    ["label" => "KVKK", "value" => $kvkk],
+    ["label" => "Dogrulama Yontemi", "value" => displayValue($validationSource, "Belirtilmedi")],
+];
+?>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Sonuç</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="wtproje.css">
+</head>
+<body class="home-page contact-result-page">
+    <div class="site-shell">
+        <header class="site-header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg topbar home-topbar">
+                    <a class="navbar-brand home-brand d-lg-none" href="index.html">Umut</a>
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Navigasyonu ac">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                        <ul class="navbar-nav home-nav align-items-lg-center">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+                            <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Giriş</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div class="container">
+                    
+                    <?php if ($hasErrors): ?>
+                    <h1>Aşşağıda sitemize gönderdiğiniz bilgiler yer almaktadır.</h1>
+                    <p>
+                        Gonderim sirasinda bazi alanlar sunucu tarafindaki kurallardan gecemedi.
+                        Asagidaki tabloyu ve hata kutusunu inceleyip forma geri donebilirsin.
+                    </p>
+                    <?php else: ?>
+                    <h1>Aşşağıda sitemize gönderdiğiniz bilgiler yer almaktadır</h1>
+                 
+                    <?php endif; ?>
+                    <div class="button-row">
+                        <a href="iletisim.html" class="custom-btn secondary">Forma Dön</a>
+                        <a href="index.html" class="custom-btn primary">Ana Sayfa</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10">
+                            <div class="result-panel">
+                        <?php if ($hasErrors): ?>
+                        <div class="feedback-box error mb-4" role="alert">
+                            <strong>Form gönderilemedi.</strong>
+                            <ul class="mb-0 mt-2">
+                                <?php foreach ($validationErrors as $error): ?>
+                                <li><?= h($error) ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <?php else: ?>
+                        <div class="feedback-box success mb-4" role="status">
+                            Form başarıyla doğrulandı ve sunucu tarafında kabul edildi.
+                        </div>
+                        <?php endif; ?>
+
+                                <h2 class="mb-3">Gönderilen Tüm Bilgiler</h2>
+                                <div class="table-responsive result-table-shell">
+                                    <table class="table align-middle result-table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Alan</th>
+                                            <th scope="col">Gelen Veri</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($tumAlanlar as $alan): ?>
+                                        <tr>
+                                            <th scope="row"><?= h($alan["label"]) ?></th>
+                                            <td><?= nl2br(h($alan["value"])) ?></td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer home-footer">
+            <div class="container">
+                <div class="footer-box contact-strip">
+                    <span class="contact-strip-label">İletisim</span>
+                    <a href="https://www.instagram.com/byhtn.umt/" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                        <span>İnstagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@byhtn.umt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-tiktok" aria-hidden="true"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://github.com/byhtnumt" target="_blank" rel="noreferrer" class="contact-strip-link">
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
